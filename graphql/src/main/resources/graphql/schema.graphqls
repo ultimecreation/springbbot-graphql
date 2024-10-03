@@ -1,0 +1,33 @@
+type Query {
+  getBooks: [Book]
+  getBookById(id: ID): Book
+}
+
+type User {
+  id: ID
+  username: String
+  email: String
+  password: String
+  comments: [Comment]
+}
+
+type Author {
+  id: ID
+  name: String
+  books: [Book]
+}
+
+type Book {
+  id: Int
+  title: String
+  publisher: String
+  author: Author
+  comment: [Comment]
+}
+
+type Comment {
+  id: ID
+  content: String
+  user: User
+  book: Book
+}
